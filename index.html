@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Agency</title>
 
-<!-- FAVICON (ИСПРАВЛЕНО - raw ссылка) -->
+<!-- FAVICON -->
 <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Borser71/ideal-my-site/main/favicon.ico">
 
 <style>
@@ -105,6 +105,20 @@ nav{
     display: block;
 }
 
+/* Блок "Почему выбирают нас" */
+.about{
+    padding:80px 0;
+    text-align:center;
+    background:#0f172a;
+}
+
+.about p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+}
+
+/* Преимущества (быстрый запуск и т.д.) */
 .features{
     padding:80px 0;
     background:#111827;
@@ -126,15 +140,77 @@ nav{
     margin-bottom:15px;
 }
 
-.about{
-    padding:80px 0;
-    text-align:center;
+/* Стили для блока с ценами */
+.pricing {
+    padding: 80px 0;
+    background: #0f172a;
 }
 
-.about p{
-    max-width:700px;
-    margin:auto;
-    color:#cbd5e1;
+.pricing h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pricing-card {
+    background: #1f2937;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #3b82f6;
+    margin: 20px 0;
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 30px;
+    text-align: left;
+}
+
+.price-list li {
+    margin-bottom: 12px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.price-btn {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    background: #3b82f6;
+    transition: 0.3s;
+}
+
+.price-btn:hover {
+    background: #2563eb;
+    transform: scale(1.02);
 }
 
 .contact{
@@ -174,6 +250,48 @@ footer{
     color:#94a3b8;
 }
 
+/* Стили для описания типов сайтов */
+.site-types {
+    padding: 60px 0;
+    background: #111827;
+}
+
+.site-types h3 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.type-card {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.type-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+.type-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Иконки для карточек типов сайтов */
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
 @media(max-width:768px){
     .hero h1{
         font-size:36px;
@@ -187,6 +305,22 @@ footer{
     .hero-banner {
         width: 95%;
     }
+    
+    .pricing-grid {
+        gap: 20px;
+    }
+    
+    .price {
+        font-size: 1.8rem;
+    }
+    
+    .site-types h3 {
+        font-size: 1.5rem;
+    }
+    
+    .type-card h4 {
+        font-size: 1.3rem;
+    }
 }
 </style>
 </head>
@@ -194,52 +328,24 @@ footer{
 
 <header class="container">
     <nav>
-
         <div class="logo">
             DIGITAL&ensp;AGENCY
         </div>
-
         <div class="nav-buttons">
-
-            <a
-                href="https://t.me/borisovsergey71"
-                target="_blank"
-                class="btn"
-            >
-                ✈️ Telegram
-            </a>
-
-            <a
-                href="https://wa.me/79582319212"
-                target="_blank"
-                class="btn"
-            >
-                💬 WhatsApp
-            </a>
-
-            <a
-                href="#contact"
-                class="btn"
-            >
-                Связаться
-            </a>
-
+            <a href="https://t.me/borisovsergey71" target="_blank" class="btn">✈️ Telegram</a>
+            <a href="https://wa.me/79582319212" target="_blank" class="btn">💬 WhatsApp</a>
+            <a href="#contact" class="btn">Связаться</a>
         </div>
-
     </nav>
 </header>
 
-<!-- Hero секция с баннером внутри (без кнопки Получить консультацию) -->
+<!-- Hero секция с баннером внутри -->
 <section class="hero">
     <div class="container">
         <h1>Создаем сайты, которые продают</h1>
-
         <p>
-            Лендинги, корпоративные сайты и веб-сервисы
-            для роста вашего бизнеса.
+            Лендинги, сайты визитки и сайты портфолио для роста вашего бизнеса.
         </p>
-
-        <!-- Баннер расположен сразу под текстом -->
         <div class="hero-banner">
             <img 
                 src="https://github.com/Borser71/my-images/raw/main/website-banner.png.png" 
@@ -250,79 +356,124 @@ footer{
     </div>
 </section>
 
-<section class="features">
-    <div class="container">
-        <div class="grid">
-
-            <div class="card">
-                <h3>🚀 Быстрый запуск</h3>
-                <p>Запускаем проекты за считанные дни.</p>
-            </div>
-
-            <div class="card">
-                <h3>📱 Адаптивный дизайн</h3>
-                <p>Отлично работает на телефонах и ПК.</p>
-            </div>
-
-            <div class="card">
-                <h3>📈 Конверсия</h3>
-                <p>Фокус на продажах и заявках.</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
+<!-- Блок "Почему выбирают нас" -->
 <section class="about">
     <div class="container">
-
         <h2>Почему выбирают нас</h2>
-
         <br>
-
         <p>
             Мы создаем современные сайты с акцентом
             на скорость загрузки, удобство использования
             и высокую конверсию посетителей в клиентов.
         </p>
-
     </div>
 </section>
 
+<!-- Преимущества (быстрый запуск, адаптив, конверсия) -->
+<section class="features">
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3>🚀 Быстрый запуск</h3>
+                <p>Запускаем проекты за считанные дни.</p>
+            </div>
+            <div class="card">
+                <h3>📱 Адаптивный дизайн</h3>
+                <p>Отлично работает на телефонах и ПК.</p>
+            </div>
+            <div class="card">
+                <h3>📈 Конверсия</h3>
+                <p>Фокус на продажах и заявках.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Описание типов сайтов -->
+<section class="site-types">
+    <div class="container">
+        <h3>Что мы создаем</h3>
+        <div class="types-grid">
+            <div class="type-card">
+                <div class="icon">🎯</div>
+                <h4>Лендинг</h4>
+                <p>Одностраничный сайт, созданный для продажи одного товара или услуги. Вся структура подчинена одной цели — заставить посетителя оставить заявку или совершить покупку. Мощные заголовки, триггеры, призывы к действию и высокая конверсия. Идеален для запуска рекламных кампаний.</p>
+            </div>
+            <div class="type-card">
+                <div class="icon">🏢</div>
+                <h4>Сайт визитка</h4>
+                <p>Небольшой сайт из 2-5 страниц: главная, услуги, контакты, о компании. Идеальное решение для малого бизнеса, фрилансеров и специалистов, которым нужно быстро представить себя в интернете. Задача — дать клиенту контактные данные и базовую информацию о компании.</p>
+            </div>
+            <div class="type-card">
+                <div class="icon">🖼️</div>
+                <h4>Сайт портфолио</h4>
+                <p>Профессиональный сайт с акцентом на демонстрацию ваших работ и проектов. Идеально подходит для дизайнеров, фотографов, архитекторов, строительных компаний и креативных агентств. Каждый проект оформляется как отдельный кейс с описанием задачи, процесса и результата.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок с ценами -->
+<section class="pricing">
+    <div class="container">
+        <h2>Выберите подходящий тариф</h2>
+        <div class="pricing-grid">
+            
+            <!-- Тариф 1: Лендинг -->
+            <div class="pricing-card">
+                <h3>Лендинг</h3>
+                <div class="price">от 15 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ Одностраничный сайт</li>
+                    <li>✓ Адаптивная вёрстка</li>
+                    <li>✓ Форма захвата заявок</li>
+                    <li>✓ Базовая SEO-оптимизация</li>
+                </ul>
+                <a href="https://interbor.getplatinum.ru/payment/POqRw4l" target="_blank" class="btn price-btn">Заказать</a>
+            </div>
+
+            <!-- Тариф 2: Сайт визитка -->
+            <div class="pricing-card">
+                <h3>Сайт визитка</h3>
+                <div class="price">от 20 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ 2-5 страниц</li>
+                    <li>✓ Информация о компании</li>
+                    <li>✓ Услуги и контакты</li>
+                    <li>✓ Форма обратной связи</li>
+                </ul>
+                <a href="https://interbor.getplatinum.ru/payment/MH38bFZ" target="_blank" class="btn price-btn">Заказать</a>
+            </div>
+
+            <!-- Тариф 3: Сайт портфолио -->
+            <div class="pricing-card">
+                <h3>Сайт портфолио</h3>
+                <div class="price">от 25 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ Демонстрация проектов</li>
+                    <li>✓ Кейсы с описанием</li>
+                    <li>✓ Индивидуальный дизайн</li>
+                    <li>✓ Повышение доверия</li>
+                </ul>
+                <a href="https://interbor.getplatinum.ru/payment/CtR5jGV" target="_blank" class="btn price-btn">Заказать</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Форма контактов -->
 <section class="contact" id="contact">
     <div class="container">
-
         <h2>Оставьте заявку</h2>
-
         <form id="contactForm">
-
-            <input
-                type="text"
-                name="name"
-                placeholder="Ваше имя"
-                required
-            >
-
-            <input
-                type="email"
-                name="email"
-                placeholder="Ваш Email"
-                required
-            >
-
-            <button
-                class="btn"
-                type="submit"
-            >
-                Отправить заявку
-            </button>
-
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <button class="btn" type="submit">Отправить заявку</button>
         </form>
-
         <div id="successMessage">
             ✅ Заявка успешно отправлена!
         </div>
-
     </div>
 </section>
 
@@ -335,45 +486,29 @@ const form = document.getElementById('contactForm');
 const successMessage = document.getElementById('successMessage');
 
 form.addEventListener('submit', async (e) => {
-
     e.preventDefault();
-
     const formData = new FormData(form);
-
     try {
-
-        const response = await fetch(
-            'https://formspree.io/f/xpqejkqv',
-            {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+        const response = await fetch('https://formspree.io/f/xpqejkqv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
-        );
-
+        });
         if(response.ok){
-
             form.reset();
-
             successMessage.style.display = 'block';
-
             setTimeout(() => {
                 successMessage.style.display = 'none';
             }, 5000);
-
         } else {
-
             alert('Ошибка отправки. Попробуйте позже.');
-
         }
-
     } catch(error){
-
         alert('Ошибка соединения.');
-
     }
-
 });
 </script>
+</body>
+</html>
