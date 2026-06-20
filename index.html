@@ -163,7 +163,7 @@ nav{
 
 .types-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -172,6 +172,11 @@ nav{
     padding: 30px;
     border-radius: 20px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
 }
 
 .type-card h4 {
@@ -288,12 +293,20 @@ nav{
     font-size: 0.95rem;
 }
 
+/* ===== БОЛЬШИЕ КНОПКИ "ЗАКАЗАТЬ" (КАК РАНЬШЕ) ===== */
 .price-btn {
     display: inline-block;
     width: 80%;
     text-align: center;
     background: #3b82f6;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
     transition: 0.3s;
+    font-size: 16px;
 }
 
 .price-btn:hover {
@@ -496,6 +509,12 @@ footer .footer-logo img {
         padding: 8px 16px;
         font-size: 13px;
     }
+
+    .price-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+    }
 }
 </style>
 </head>
@@ -535,7 +554,7 @@ footer .footer-logo img {
     <div class="container">
         <h1>Создаем сайты, которые продают</h1>
         <p>
-            Лендинги, сайты визитки и сайты портфолио для роста вашего бизнеса.
+            Лендинги, визитки, портфолио, информационные проекты и интернет-магазины для роста вашего бизнеса.
         </p>
         <div class="hero-banner">
             <img 
@@ -553,6 +572,7 @@ footer .footer-logo img {
         <h3>Что мы делаем</h3>
         <div class="types-grid">
             
+            <!-- 1. Лендинг -->
             <div class="type-card">
                 <div class="icon">🎯</div>
                 <h4>Лендинг</h4>
@@ -560,18 +580,36 @@ footer .footer-logo img {
                 <button class="show-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Показать</button>
             </div>
             
+            <!-- 2. Визитка -->
             <div class="type-card">
                 <div class="icon">🏢</div>
-                <h4>Сайт визитка</h4>
-                <p>Небольшой сайт из 1-5 страниц: главная, услуги, контакты, о компании. Идеальное решение для малого бизнеса, фрилансеров и специалистов, которым нужно быстро представить себя в интернете. Задача — дать клиенту контактные данные и базовую информацию о компании.</p>
+                <h4>Визитка</h4>
+                <p>Небольшой сайт из 1-5 страниц: главная, услуги, контакты, о компании. Идеальное решение для малого бизнеса, фрилансеров и специалистов, которым нужно быстро представить себя в интернете. Задача — дать клиенту контактные данные и базовую информацию о компании и услугах.</p>
                 <button class="show-btn" onclick="window.open('https://barbershop.borser.site/', '_blank');">Показать</button>
             </div>
             
+            <!-- 3. Портфолио -->
             <div class="type-card">
                 <div class="icon">🖼️</div>
-                <h4>Сайт портфолио</h4>
+                <h4>Портфолио</h4>
                 <p>Профессиональный имиджевый сайт с акцентом на демонстрацию ваших работ и проектов. Идеально подходит для дизайнеров, фотографов, архитекторов, строительных компаний и креативных агентств. Каждый проект оформляется как отдельный кейс с описанием задачи, процесса и результата.</p>
                 <button class="show-btn" onclick="window.open('https://anna.borser.site/', '_blank');">Показать</button>
+            </div>
+
+            <!-- 4. Информационный (НОВЫЙ, 8 строк) -->
+            <div class="type-card">
+                <div class="icon">📰</div>
+                <h4>Информационный</h4>
+                <p>Сайт для публикации статей, новостей, гидов и обзоров. Удобная структура, поиск по материалам и адаптивный дизайн делают его идеальным для блогов, СМИ, образовательных и туристических проектов. Отличный способ делиться знаниями, привлекать аудиторию и монетизировать контент.</p>
+                <button class="show-btn" onclick="window.open('https://paris.borser.site/', '_blank');">Показать</button>
+            </div>
+
+            <!-- 5. Интернет-магазин (НОВЫЙ, 8 строк) -->
+            <div class="type-card">
+                <div class="icon">🛍️</div>
+                <h4>Интернет-магазин</h4>
+                <p>Готовое решение для продаж с каталогом товаров, корзиной, фильтрами и системой оплаты. Подходит для одежды, аксессуаров, цифровых товаров и не только. Помогаем запустить онлайн-продажи быстро, без технических сложностей. Вы сами управляете заказами и товарами в одном месте.</p>
+                <button class="show-btn" onclick="window.open('https://borser.site/', '_blank');">Показать</button>
             </div>
             
         </div>
@@ -621,20 +659,35 @@ footer .footer-logo img {
         <h2>Выберите подходящий тариф</h2>
         <div class="pricing-grid">
             
+            <!-- 1. Лендинг -->
             <div class="pricing-card">
                 <h3>Лендинг</h3>
-                <div class="price">от 15 000 ₽</div>
+                <div class="price">от 10 000 ₽</div>
                 <ul class="price-list">
                     <li>✓ Одностраничный сайт</li>
                     <li>✓ Адаптивная вёрстка</li>
                     <li>✓ Форма захвата заявок</li>
                     <li>✓ Базовая SEO-оптимизация</li>
                 </ul>
-                <a href="https://interbor.getplatinum.ru/payment/POqRw4l" target="_blank" class="btn price-btn">Заказать</a>
+                <a href="https://interbor.getplatinum.ru/payment/POqRw4l" target="_blank" class="price-btn">Заказать</a>
             </div>
 
+            <!-- 2. Информационный -->
             <div class="pricing-card">
-                <h3>Сайт визитка</h3>
+                <h3>Информационный</h3>
+                <div class="price">от 15 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ Многостраничная структура</li>
+                    <li>✓ Поиск и навигация</li>
+                    <li>✓ Адаптивный дизайн</li>
+                    <li>✓ Система управления</li>
+                </ul>
+                <a href="https://interbor.getplatinum.ru/payment/your-link" target="_blank" class="price-btn">Заказать</a>
+            </div>
+
+            <!-- 3. Визитка -->
+            <div class="pricing-card">
+                <h3>Визитка</h3>
                 <div class="price">от 20 000 ₽</div>
                 <ul class="price-list">
                     <li>✓ Кнопки мессенджеров</li>
@@ -642,11 +695,12 @@ footer .footer-logo img {
                     <li>✓ Услуги и контакты</li>
                     <li>✓ Форма обратной связи</li>
                 </ul>
-                <a href="https://interbor.getplatinum.ru/payment/MH38bFZ" target="_blank" class="btn price-btn">Заказать</a>
+                <a href="https://interbor.getplatinum.ru/payment/MH38bFZ" target="_blank" class="price-btn">Заказать</a>
             </div>
 
+            <!-- 4. Портфолио -->
             <div class="pricing-card">
-                <h3>Сайт портфолио</h3>
+                <h3>Портфолио</h3>
                 <div class="price">от 25 000 ₽</div>
                 <ul class="price-list">
                     <li>✓ Демонстрация проектов</li>
@@ -654,7 +708,20 @@ footer .footer-logo img {
                     <li>✓ Индивидуальный дизайн</li>
                     <li>✓ Повышение доверия</li>
                 </ul>
-                <a href="https://interbor.getplatinum.ru/payment/CtR5jGV" target="_blank" class="btn price-btn">Заказать</a>
+                <a href="https://interbor.getplatinum.ru/payment/CtR5jGV" target="_blank" class="price-btn">Заказать</a>
+            </div>
+
+            <!-- 5. Интернет-магазин -->
+            <div class="pricing-card">
+                <h3>Интернет-магазин</h3>
+                <div class="price">от 30 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ Каталог товаров</li>
+                    <li>✓ Корзина и оплата</li>
+                    <li>✓ Фильтры и поиск</li>
+                    <li>✓ Админ-панель</li>
+                </ul>
+                <a href="https://interbor.getplatinum.ru/payment/your-link" target="_blank" class="price-btn">Заказать</a>
             </div>
 
         </div>
@@ -701,7 +768,7 @@ footer .footer-logo img {
                 alt="Digital Agency Logo"
                 loading="lazy"
             >
-            DIGITAL&ensp;AGENCY   <!-- ← И ВНИЗУ ТОЖЕ ШИРОКИЙ ПРОБЕЛ -->
+            DIGITAL&ensp;AGENCY
         </div>
         <div>© 2026 Все права защищены.</div>
     </div>
