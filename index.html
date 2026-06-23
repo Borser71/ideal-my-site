@@ -346,7 +346,7 @@ nav{
     transform: scale(1.02);
 }
 
-/* ===== КОНТАКТЫ (НОВЫЙ БЛОК) ===== */
+/* ===== КОНТАКТЫ ===== */
 .contacts{
     padding:80px 0;
     background:#111827;
@@ -396,10 +396,6 @@ nav{
 .contact-item.email .label {
     font-size: 14px;
 }
-
-/* ===== МАЛЕНЬКАЯ КНОПКА "ОСТАВИТЬ ЗАЯВКУ" (УДАЛЕНА) ===== */
-
-/* ===== СОЦИАЛЬНЫЕ КНОПКИ ПОД ФОРМОЙ (УДАЛЕНЫ) ===== */
 
 /* ===== МОДАЛЬНОЕ ОКНО КОРЗИНЫ ===== */
 .modal {
@@ -524,7 +520,7 @@ nav{
     background: #2563eb;
 }
 
-/* ===== КНОПКА "ДОБАВИТЬ" В МОДАЛЬНОМ ОКНЕ МАГАЗИНА ===== */
+/* ===== КНОПКА "ДОБАВИТЬ" В МОДАЛЬНОМ ОКНЕ ===== */
 .btn-add {
     background: #3b82f6;
     color: #fff;
@@ -927,7 +923,7 @@ footer .footer-logo img {
     </div>
 </div>
 
-<!-- ===== МОДАЛЬНОЕ ОКНО ДЛЯ ИНТЕРНЕТ-МАГАЗИНА ===== -->
+<!-- ===== МОДАЛЬНОЕ ОКНО ДЛЯ ИНТЕРНЕТ-МАГАЗИНА (ОБНОВЛЕНО) ===== -->
 <div class="modal" id="shopModal">
     <div class="modal-content">
         <span class="modal-close" id="closeShopModal">&times;</span>
@@ -935,18 +931,18 @@ footer .footer-logo img {
         
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
             <div>
-                <strong>Интернет-магазин на 10 товаров</strong>
+                <strong>Интернет-магазин на 6 товаров</strong>
                 <div style="color: #94a3b8;">30 000 ₽</div>
             </div>
-            <button class="btn-add" onclick="addToCart({ id: 1, name: 'Интернет-магазин (10 товаров)', price: 30000 })">Купить</button>
+            <button class="btn-add" onclick="addToCart({ id: 1, name: 'Интернет-магазин (6 товаров)', price: 30000 })">Купить</button>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
             <div>
-                <strong>Еще 10 товаров</strong>
-                <div style="color: #94a3b8;">3 000 ₽</div>
+                <strong>Еще 6 товаров</strong>
+                <div style="color: #94a3b8;">5 000 ₽</div>
             </div>
-            <button class="btn-add" onclick="addToCart({ id: 2, name: 'Дополнительные 10 товаров', price: 3000 })">Купить</button>
+            <button class="btn-add" onclick="addToCart({ id: 2, name: 'Дополнительные 6 товаров', price: 5000 })">Купить</button>
         </div>
 
         <div style="margin-top: 20px; text-align: center;">
@@ -1140,8 +1136,6 @@ document.querySelectorAll('.nav-menu a').forEach(anchor => {
         }
     });
 });
-
-// ===== СКРИПТ ДЛЯ ФОРМЫ (удален) =====
 
 // ===== ФУНКЦИЯ ДЛЯ ОТКРЫТИЯ МОДАЛЬНОГО ОКНА ЛЕНДИНГА =====
 function openLandingModal() {
