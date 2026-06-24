@@ -388,11 +388,14 @@ nav{
 }
 
 .contact-item .icon {
-    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-item .label {
     font-size: 16px;
+    color: #cbd5e1;
 }
 
 .contact-item.email .label {
@@ -907,7 +910,7 @@ footer {
             </div>
             <div class="card">
                 <h3>🌐 Хостинг в подарок</h3>
-                <p>Вы покупаете домен, а хостинг в подарок.</p>
+                <p>Вы покупаете домен, а хостинг вам в подарок.</p>
             </div>
             <div class="card">
                 <h3>📱 Адаптивный дизайн</h3>
@@ -996,12 +999,12 @@ footer {
     </div>
 </section>
 
-<!-- ===== КОНТАКТЫ ===== -->
+<!-- ===== КОНТАКТЫ (НОВЫЕ ИКОНКИ) ===== -->
 <section class="contacts" id="contacts">
     <div class="container">
         <h2>Наши контакты</h2>
         <div class="contacts-grid">
-            <!-- Telegram (новая иконка) -->
+            <!-- Telegram -->
             <a href="https://t.me/borisovsergey71" target="_blank" class="contact-item">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
@@ -1011,7 +1014,7 @@ footer {
                 <span class="label">Telegram</span>
             </a>
 
-            <!-- WhatsApp (новая иконка) -->
+            <!-- WhatsApp -->
             <a href="https://wa.me/79582319212" target="_blank" class="contact-item">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
@@ -1021,9 +1024,14 @@ footer {
                 <span class="label">WhatsApp</span>
             </a>
 
-            <!-- Email (иконка осталась) -->
+            <!-- Email (синяя иконка) -->
             <a href="mailto:wisebor@gmail.com" class="contact-item email">
-                <span class="icon">📧</span>
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
+                        <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+                        <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+                    </svg>
+                </span>
                 <span class="label">wisebor@gmail.com</span>
             </a>
         </div>
