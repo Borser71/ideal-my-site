@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="test()">Проверить Worker</button>
+    <div id="result"></div>
+    <script>
+        async function test() {
+            const res = await fetch('https://yookassa.wisebor.workers.dev/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: 100, description: 'Тест', returnUrl: 'https://borisov.store/' })
+            });
+            const data = await res.json();
+            document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        }
+    </script>
+</body>
+</html>
