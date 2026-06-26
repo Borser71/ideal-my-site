@@ -888,6 +888,14 @@ footer {
                 <p>Готовое решение для продаж с каталогом товаров, корзиной, фильтрами и системой оплаты. Подходит для одежды, аксессуаров, цифровых товаров и не только. Помогаем запустить онлайн-продажи быстро, без технических сложностей. Вы сами управляете заказами и товарами в одном месте.</p>
                 <button class="show-btn" onclick="window.open('https://borser.site/', '_blank');">Показать</button>
             </div>
+
+            <!-- 6. Универсальный (НОВЫЙ) -->
+            <div class="type-card">
+                <div class="icon">🌟</div>
+                <h4>Универсальный</h4>
+                <p>Комбинированное решение, которое объединяет визитку, портфолио и интернет-магазин в одном проекте. Подходит для бизнеса, которому нужен и имиджевый сайт, и каталог услуг, и возможность принимать оплату онлайн. Полноценный цифровой актив для роста компании.</p>
+                <button class="show-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">Показать</button>
+            </div>
             
         </div>
     </div>
@@ -999,6 +1007,19 @@ footer {
                     <li>✓ Админ-панель</li>
                 </ul>
                 <button class="price-btn" onclick="openShopModal()">Заказать</button>
+            </div>
+
+            <!-- 6. Универсальный (НОВЫЙ) -->
+            <div class="pricing-card">
+                <h3>Универсальный</h3>
+                <div class="price">от 60 000 ₽</div>
+                <ul class="price-list">
+                    <li>✓ Визитка + Портфолио + Магазин</li>
+                    <li>✓ Приём платежей</li>
+                    <li>✓ Корзина и каталог</li>
+                    <li>✓ Индивидуальный дизайн</li>
+                </ul>
+                <button class="price-btn" onclick="openUniversalModal()">Заказать</button>
             </div>
 
         </div>
@@ -1119,7 +1140,7 @@ footer {
 </div>
 
 <!-- ======================================================== -->
-<!-- 3. ПОРТФОЛИО                                            -->
+<!-- 3. ПОРТФОЛИО (добавлена Форма обратной связи 2000 р.)  -->
 <!-- ======================================================== -->
 <div class="modal" id="portfolioModal">
     <div class="modal-content">
@@ -1145,6 +1166,11 @@ footer {
             <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 5, name: 'Страница Политика Конфиденциальности', price: 3000 })">Купить</button>
         </div>
+        <!-- 2 000 (Форма обратной связи) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+            <button class="btn-add" onclick="addToCart({ id: 8, name: 'Форма обратной связи', price: 2000 })">Купить</button>
+        </div>
         <!-- 0 (подарок) -->
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
             <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
@@ -1155,7 +1181,7 @@ footer {
 </div>
 
 <!-- ======================================================== -->
-<!-- 4. ВИЗИТТКА (новая: Подключение приема платежей + Карта)-->
+<!-- 4. ВИЗИТТКА (убрана Карта проезда)                     -->
 <!-- ======================================================== -->
 <div class="modal" id="vizitkaModal">
     <div class="modal-content">
@@ -1181,12 +1207,7 @@ footer {
             <div><strong>Страница Политика конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 7, name: 'Страница Политика конфиденциальности', price: 3000 })">Купить</button>
         </div>
-        <!-- 2 000 (карта проезда) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Карта проезда</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
-            <button class="btn-add" onclick="addToCart({ id: 21, name: 'Карта проезда', price: 2000 })">Купить</button>
-        </div>
-        <!-- 2 000 -->
+        <!-- 2 000 (форма обратной связи) -->
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
             <div><strong>Форма обратной связи</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 8, name: 'Форма обратной связи', price: 2000 })">Купить</button>
@@ -1224,7 +1245,7 @@ footer {
         </div>
         <!-- 3 000 -->
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+            <div><strong>Страница Политика Конфиденциальности</strong><div style: "color: #94a3b8;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 11, name: 'Страница Политика Конфиденциальности (инфо)', price: 3000 })">Купить</button>
         </div>
         <!-- 2 000 -->
@@ -1238,6 +1259,37 @@ footer {
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
         <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('infoModal').style.display='none'">Закрыть</button></div>
+    </div>
+</div>
+
+<!-- ======================================================== -->
+<!-- 6. УНИВЕРСАЛЬНЫЙ (НОВЫЙ)                                -->
+<!-- ======================================================== -->
+<div class="modal" id="universalModal">
+    <div class="modal-content">
+        <span class="modal-close" id="closeUniversalModal">&times;</span>
+        <h2>🌟 Универсальный сайт</h2>
+        <!-- 60 000 -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Универсальный сайт</strong><div style="color: #94a3b8;">60 000 ₽</div></div>
+            <button class="btn-add" onclick="addToCart({ id: 22, name: 'Универсальный сайт', price: 60000 })">Купить</button>
+        </div>
+        <!-- 3 000 (отзывы) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+            <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
+        </div>
+        <!-- 2 000 (карта проезда) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Карта проезда</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+            <button class="btn-add" onclick="addToCart({ id: 21, name: 'Карта проезда', price: 2000 })">Купить</button>
+        </div>
+        <!-- 0 (подарок) -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+            <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
+        </div>
+        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('universalModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
@@ -1378,10 +1430,10 @@ const products = [
     { id: 14, name: 'Еще 2 товара', price: 5000, icon: '➕' },
     { id: 15, name: 'Страница Договор оферты (лендинг)', price: 3000, icon: '📄' },
     { id: 16, name: 'Страница Политика Конфиденциальности (лендинг)', price: 3000, icon: '🔒' },
-    // id: 17 удален (Unitpay)
     { id: 18, name: 'Добавление блока Отзывы', price: 3000, icon: '⭐' },
     { id: 20, name: 'Подключение приема платежей', price: 3000, icon: '💳' },
     { id: 21, name: 'Карта проезда', price: 2000, icon: '🗺️' },
+    { id: 22, name: 'Универсальный сайт', price: 60000, icon: '🌟' },
     { id: 99, name: 'Установка иконки favicon (подарок)', price: 0, icon: '🎁' },
 ];
 
@@ -1456,6 +1508,7 @@ function openShopModal() { document.getElementById('shopModal').style.display = 
 function openPortfolioModal() { document.getElementById('portfolioModal').style.display = 'flex'; }
 function openVizitkaModal() { document.getElementById('vizitkaModal').style.display = 'flex'; }
 function openInfoModal() { document.getElementById('infoModal').style.display = 'flex'; }
+function openUniversalModal() { document.getElementById('universalModal').style.display = 'flex'; }
 
 document.querySelectorAll('.modal-close').forEach(el => {
     el.addEventListener('click', function() {
