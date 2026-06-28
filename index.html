@@ -51,7 +51,7 @@ header{
     width: 100%;
     z-index: 1000;
     background: #0f172a;
-    padding: 15px 0;
+    padding: 12px 0;
     transition: box-shadow 0.3s ease;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -61,27 +61,57 @@ nav{
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    gap:15px;
+    gap:10px;
 }
 
-/* Левая часть: логотип */
 .logo{
     display:flex;
     align-items:center;
-    gap:20px;
-    font-size:24px;
+    gap:12px;
+    font-size:22px;
     font-weight:bold;
 }
 
 .logo img {
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
 }
 
-/* Центральная часть: меню */
+/* ===== ГАМБУРГЕР ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #cbd5e1;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
 .nav-menu {
     display:flex;
     gap:30px;
@@ -100,14 +130,12 @@ nav{
     color: #3b82f6;
 }
 
-/* ===== КОРЗИНА В ШАПКЕ ===== */
 .nav-cart {
     position: relative;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 22px;
     color: #cbd5e1;
     transition: color 0.3s ease;
-    margin-left: 10px;
     display: flex;
     align-items: center;
 }
@@ -122,22 +150,57 @@ nav{
     right: -12px;
     background: #3b82f6;
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Правая часть: соцсети - СКРЫТЫ */
 .nav-social {
     display: none;
 }
 
-/* Стиль для кнопки "Показать" */
+/* ===== КАРТОЧКИ "ЧТО МЫ ДЕЛАЕМ" ===== */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+.type-card {
+    background: #1f2937;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.type-card:hover {
+    transform: translateY(-5px);
+}
+
+.type-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #3b82f6;
+}
+
+.type-card p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    text-align: left;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
 .show-btn {
     background: transparent;
     border: 2px solid #3b82f6;
@@ -148,7 +211,9 @@ nav{
     display: inline-block;
     transition: .3s;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: auto;
+    align-self: center;
+    min-width: 140px;
 }
 
 .show-btn:hover {
@@ -158,22 +223,21 @@ nav{
 }
 
 .hero{
-    padding: 40px 0 20px 0;
+    padding: 30px 0 20px 0;
     text-align:center;
 }
 
 .hero h1{
-    font-size:56px;
-    margin-bottom:20px;
+    font-size:48px;
+    margin-bottom:15px;
 }
 
 .hero p{
-    font-size:20px;
+    font-size:18px;
     color:#cbd5e1;
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
-/* Стили для баннера в hero-секции */
 .hero-banner {
     max-width: 900px;
     margin: 0 auto;
@@ -195,93 +259,84 @@ nav{
     display: block;
 }
 
-/* Стили для описания типов сайтов */
 .site-types {
-    padding: 60px 0;
+    padding: 50px 0;
     background: #111827;
 }
 
 .site-types h3 {
     font-size: 1.8rem;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-align: center;
 }
 
-.types-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.type-card {
-    background: #1f2937;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.type-card:hover {
-    transform: translateY(-5px);
-}
-
-.type-card h4 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: #3b82f6;
-}
-
-.type-card p {
-    color: #cbd5e1;
-    line-height: 1.6;
-    text-align: left;
-}
-
-/* Иконки для карточек типов сайтов */
 .icon {
     font-size: 3rem;
     margin-bottom: 15px;
     display: inline-block;
 }
 
-/* Блок "Почему выбирают нас" */
+/* ===== БЛОК "ПОЧЕМУ ВЫБИРАЮТ НАС" (ИСПРАВЛЕН) ===== */
 .about{
-    padding:80px 0;
+    padding:60px 0;
     text-align:center;
     background:#0f172a;
 }
 
-.about p{
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about > .container > p {
     max-width:700px;
-    margin:auto;
+    margin: 0 auto 40px auto;
     color:#cbd5e1;
 }
 
-/* Преимущества (быстрый запуск и т.д.) */
-.features{
-    padding:80px 0;
-    background:#111827;
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+.about-card {
+    background: #1f2937;
+    padding: 25px 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: left;
 }
 
-.card{
-    background:#1f2937;
-    padding:30px;
-    border-radius:15px;
+.about-card:hover {
+    transform: translateY(-5px);
 }
 
-.card h3{
-    margin-bottom:15px;
+.about-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #3b82f6;
 }
 
-/* Стили для блока с ценами */
+.about-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: auto;
+}
+
+/* ===== СТАРЫЙ БЛОК ПРЕИМУЩЕСТВ - СКРЫВАЕМ ===== */
+.features {
+    display: none;
+}
+
+/* ===== ЦЕНЫ ===== */
 .pricing {
-    padding: 80px 0;
+    padding: 60px 0;
     background: #0f172a;
 }
 
@@ -289,12 +344,12 @@ nav{
     font-size: 2rem;
     color: #fff;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 20px;
 }
@@ -302,7 +357,7 @@ nav{
 .pricing-card {
     background: #1f2937;
     border-radius: 20px;
-    padding: 35px 25px;
+    padding: 30px 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -314,32 +369,31 @@ nav{
 }
 
 .pricing-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
     color: #fff;
 }
 
 .price {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #3b82f6;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .price-list {
     list-style: none;
     padding: 0;
-    margin: 25px 0 30px;
+    margin: 20px 0 25px;
     text-align: left;
 }
 
 .price-list li {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #cbd5e1;
     font-size: 0.95rem;
 }
 
-/* ===== БОЛЬШИЕ КНОПКИ "ЗАКАЗАТЬ" (КАК РАНЬШЕ) ===== */
 .price-btn {
     display: inline-block;
     width: 80%;
@@ -362,14 +416,14 @@ nav{
 
 /* ===== КОНТАКТЫ ===== */
 .contacts{
-    padding:80px 0;
+    padding:60px 0;
     background:#111827;
     text-align:center;
 }
 
 .contacts h2 {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     color: #fff;
 }
 
@@ -377,7 +431,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
     max-width: 700px;
     margin: 0 auto;
@@ -388,12 +442,12 @@ nav{
     align-items: center;
     gap: 12px;
     background: #1f2937;
-    padding: 15px 25px;
+    padding: 14px 22px;
     border-radius: 12px;
     transition: transform 0.3s ease;
     text-decoration: none;
     color: #fff;
-    min-width: 180px;
+    min-width: 160px;
     flex: 1 1 auto;
 }
 
@@ -408,15 +462,15 @@ nav{
 }
 
 .contact-item .label {
-    font-size: 16px;
+    font-size: 15px;
     color: #cbd5e1;
 }
 
 .contact-item.email .label {
-    font-size: 14px;
+    font-size: 13px;
 }
 
-/* ===== МОДАЛЬНОЕ ОКНО КОРЗИНЫ ===== */
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
 .modal {
     display: none;
     position: fixed;
@@ -432,10 +486,10 @@ nav{
 
 .modal-content {
     background: #1f2937;
-    padding: 30px;
+    padding: 25px 20px;
     border-radius: 20px;
     max-width: 500px;
-    width: 90%;
+    width: 92%;
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
@@ -444,9 +498,9 @@ nav{
 
 .modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
+    top: 12px;
+    right: 16px;
+    font-size: 26px;
     cursor: pointer;
     color: #94a3b8;
     transition: color 0.3s ease;
@@ -457,8 +511,9 @@ nav{
 }
 
 .modal h2 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     color: #3b82f6;
+    font-size: 1.4rem;
 }
 
 .cart-item {
@@ -476,11 +531,12 @@ nav{
 
 .cart-item-name {
     font-weight: bold;
+    font-size: 14px;
 }
 
 .cart-item-price {
     color: #94a3b8;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .cart-item-remove {
@@ -492,21 +548,21 @@ nav{
 }
 
 .cart-total {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 15px 0;
     text-align: right;
 }
 
-/* ===== ФОРМА В МОДАЛЬНОМ ОКНЕ ===== */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #cbd5e1;
+    font-size: 14px;
 }
 
 .form-group label .required {
@@ -515,33 +571,32 @@ nav{
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 11px;
     border: none;
     border-radius: 8px;
     background: #0f172a;
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .form-group input:focus {
     outline: 2px solid #3b82f6;
 }
 
-/* ===== ГАЛОЧКА СОГЛАСИЯ ===== */
 .checkbox-group {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin: 15px 0 20px 0;
-    font-size: 14px;
+    margin: 12px 0 18px 0;
+    font-size: 13px;
     color: #cbd5e1;
     text-align: left;
 }
 
 .checkbox-group input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
     margin-top: 2px;
     accent-color: #3b82f6;
     cursor: pointer;
@@ -558,12 +613,12 @@ nav{
 
 .btn-submit {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     background: #3b82f6;
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 17px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -572,16 +627,16 @@ nav{
     background: #2563eb;
 }
 
-/* ===== КНОПКА "ДОБАВИТЬ" В МОДАЛЬНЫХ ОКНАХ ===== */
 .btn-add {
     background: #3b82f6;
     color: #fff;
-    padding: 10px 20px;
+    padding: 9px 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background 0.3s ease;
+    white-space: nowrap;
 }
 
 .btn-add:hover {
@@ -591,7 +646,7 @@ nav{
 /* ===== ФУТЕР ===== */
 footer {
     text-align: center;
-    padding: 30px 0;
+    padding: 25px 0;
     color: #94a3b8;
     background: #0f172a;
     border-top: 1px solid #1f2937;
@@ -602,7 +657,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     max-width: 1100px;
     margin: 0 auto 20px auto;
     text-align: left;
@@ -610,15 +665,15 @@ footer {
 
 .footer-col {
     flex: 1;
-    min-width: 160px;
+    min-width: 140px;
 }
 
 .footer-col h4,
 .footer-col-docs h4,
 .footer-col-payment h4 {
     color: #fff;
-    font-size: 16px;
-    margin-bottom: 12px;
+    font-size: 15px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
@@ -633,7 +688,7 @@ footer {
 .footer-col ul li,
 .footer-col-docs ul li,
 .footer-col-payment ul li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .footer-col ul li a,
@@ -642,7 +697,7 @@ footer {
     color: #94a3b8;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .footer-col ul li a:hover,
@@ -653,30 +708,30 @@ footer {
 
 .footer-col-docs {
     flex: 1;
-    min-width: 160px;
+    min-width: 140px;
     text-align: center;
 }
 
 .footer-col-payment {
     flex: 1;
-    min-width: 160px;
+    min-width: 140px;
     text-align: right;
 }
 
 .footer-payment {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .payment-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .payment-item img {
-    height: 35px;
+    height: 30px;
     width: auto;
     border-radius: 4px;
     display: block;
@@ -686,15 +741,15 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     color: #94a3b8;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .footer-logo img {
-    height: 24px;
-    width: 24px;
+    height: 22px;
+    width: 22px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -702,87 +757,362 @@ footer {
 
 .footer-inn {
     color: #94a3b8;
-    font-size: 14px;
-    margin: 6px 0;
+    font-size: 13px;
+    margin: 4px 0;
 }
 
-@media(max-width:768px){
-    .hero h1{
-        font-size:36px;
-    }
+/* ================================================================
+   ===== АДАПТАЦИЯ =====
+   ================================================================ */
 
-    nav{
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .nav-menu {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-menu a {
-        font-size: 14px;
-    }
-
-    .hero-banner {
-        width: 95%;
+/* Планшеты и телефоны в горизонтальном режиме (до 1024px) */
+@media(max-width:1024px){
+    .hero h1 {
+        font-size: 40px;
     }
     
-    .pricing-grid {
-        gap: 20px;
+    /* === "ЧТО МЫ ДЕЛАЕМ" - 2 КОЛОНКИ === */
+    .types-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
-    
-    .price {
-        font-size: 1.8rem;
-    }
-    
-    .site-types h3 {
+
+    .type-card h4 {
         font-size: 1.5rem;
     }
-    
-    .type-card h4 {
-        font-size: 1.3rem;
-    }
-    
-    .logo {
-        font-size: 20px;
-        gap: 16px;
-    }
-    
-    .logo img {
-        height: 32px;
-        width: 32px;
+
+    .type-card p {
+        font-size: 16px;
     }
 
-    body {
-        padding-top: 110px;
+    /* === "ПОЧЕМУ ВЫБИРАЮТ НАС" - 2 КОЛОНКИ === */
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .about-card {
+        padding: 22px 18px;
+    }
+
+    .about-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+    }
+
+    /* === ЦЕНЫ - 2 КОЛОНКИ === */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .pricing-card {
+        padding: 25px 18px;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .price {
+        font-size: 1.9rem;
+    }
+
+    .price-list li {
+        font-size: 1rem;
     }
 
     .price-btn {
         padding: 10px 20px;
-        font-size: 14px;
+        font-size: 15px;
+        width: 80%;
+    }
+}
+
+/* Телефоны в вертикальном режиме (до 768px) */
+@media(max-width:768px){
+    body {
+        padding-top: 70px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 18px;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 30px;
+        width: 30px;
+    }
+
+    /* === ГАМБУРГЕР === */
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        padding: 15px 0 5px 0;
+        background: #0f172a;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        order: 4;
+        flex-basis: 100%;
+    }
+
+    .nav-menu.open {
+        display: flex !important;
+    }
+
+    .nav-menu a {
+        font-size: 16px;
+        padding: 10px 16px;
+        background: #1f2937;
+        border-radius: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .menu-toggle {
+        order: 2;
+    }
+
+    .nav-cart {
+        order: 3;
+    }
+
+    /* === HERO === */
+    .hero h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero {
+        padding: 20px 0 15px 0;
+    }
+
+    .hero-banner {
         width: 100%;
     }
 
-    .contacts-grid {
-        flex-direction: column;
-        align-items: center;
+    /* === "ЧТО МЫ ДЕЛАЕМ" - 1 КОЛОНКА === */
+    .types-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .type-card {
+        padding: 20px;
+    }
+
+    .type-card h4 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .type-card p {
+        font-size: 15px;
+    }
+
+    .show-btn {
+        font-size: 14px;
+        padding: 8px 20px;
+        min-width: 120px;
+    }
+
+    .site-types {
+        padding: 35px 0;
+    }
+
+    .site-types h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .icon {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+    }
+
+    /* === "ПОЧЕМУ ВЫБИРАЮТ НАС" - 1 КОЛОНКА === */
+    .about {
+        padding: 40px 0;
+    }
+
+    .about h2 {
+        font-size: 1.6rem;
+    }
+
+    .about > .container > p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
         gap: 15px;
     }
 
+    .about-card {
+        padding: 18px 16px;
+        border-radius: 12px;
+    }
+
+    .about-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .about-card p {
+        font-size: 0.95rem;
+    }
+
+    /* === ЦЕНЫ - 1 КОЛОНКА === */
+    .pricing {
+        padding: 40px 0;
+    }
+
+    .pricing h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .pricing-card {
+        padding: 22px 16px;
+        border-radius: 15px;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 1.7rem;
+        margin: 10px 0;
+    }
+
+    .price-list {
+        margin: 12px 0 18px;
+    }
+
+    .price-list li {
+        font-size: 0.95rem;
+        margin-bottom: 7px;
+    }
+
+    .price-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* === КОНТАКТЫ - как на скрине "супер.png" === */
+    .contacts {
+        padding: 40px 0;
+    }
+
+    .contacts h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .contacts-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        max-width: 100%;
+    }
+
     .contact-item {
-        width: 80%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #1f2937;
+        padding: 12px 18px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #fff;
+        min-width: 130px;
+        flex: 0 1 auto;
         justify-content: center;
     }
 
+    .contact-item .icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .contact-item .label {
+        font-size: 14px;
+        color: #cbd5e1;
+        white-space: nowrap;
+    }
+
+    .contact-item.email .label {
+        font-size: 12px;
+    }
+
+    /* === МОДАЛЬНЫЕ ОКНА === */
+    .modal-content {
+        padding: 20px 15px;
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .modal h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .modal-close {
+        font-size: 22px;
+        top: 10px;
+        right: 14px;
+    }
+
+    .btn-add {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+
+    /* === ФУТЕР === */
     .footer-grid {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 25px;
+        gap: 20px;
     }
 
     .footer-col,
@@ -793,18 +1123,175 @@ footer {
         text-align: center;
     }
 
+    .footer-col-docs {
+        text-align: center;
+    }
+
+    .footer-col-payment {
+        text-align: center;
+    }
+
     .payment-grid {
-        gap: 15px;
+        gap: 12px;
     }
 
     .payment-item img {
-        height: 30px;
+        height: 26px;
     }
 
-    /* ===== НОВОЕ ПРАВИЛО ДЛЯ ЗАГОЛОВКОВ ТАРИФОВ ===== */
+    .footer-logo {
+        font-size: 14px;
+    }
+
+    .footer-inn {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media(max-width:480px){
+    .logo {
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 26px;
+        width: 26px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .type-card {
+        padding: 16px;
+    }
+
+    .type-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .type-card p {
+        font-size: 14px;
+    }
+
+    .about-card {
+        padding: 14px 14px;
+    }
+
+    .about-card h3 {
+        font-size: 1rem;
+    }
+
+    .about-card p {
+        font-size: 0.9rem;
+    }
+
+    .pricing-card {
+        padding: 18px 14px;
+    }
+
     .pricing-card h3 {
-        font-size: 1.3rem !important;
-        word-break: break-word;
+        font-size: 1.2rem;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .price-list li {
+        font-size: 0.85rem;
+    }
+
+    .price-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
+    .modal-content {
+        padding: 16px 12px;
+    }
+
+    .contact-item {
+        padding: 10px 14px;
+        min-width: 110px;
+    }
+
+    .contact-item .label {
+        font-size: 12px;
+    }
+
+    .contact-item .icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Телефоны в горизонтальном режиме (ширина от 481px до 768px) */
+@media(min-width:481px) and (max-width:768px){
+    /* === "ЧТО МЫ ДЕЛАЕМ" - 2 КОЛОНКИ === */
+    .types-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    /* === "ПОЧЕМУ ВЫБИРАЮТ НАС" - 2 КОЛОНКИ === */
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .about-card {
+        padding: 16px 14px;
+    }
+
+    .about-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .about-card p {
+        font-size: 0.95rem;
+    }
+
+    /* === ЦЕНЫ - 2 КОЛОНКИ === */
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .pricing-card {
+        padding: 18px 14px;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .price {
+        font-size: 1.6rem;
+    }
+
+    .price-list li {
+        font-size: 0.9rem;
+    }
+
+    .price-btn {
+        font-size: 13px;
+        padding: 8px 14px;
+        width: 100%;
     }
 }
 </style>
@@ -824,8 +1311,15 @@ footer {
                 DIGITAL&ensp;AGENCY
             </div>
 
+            <!-- Кнопка гамбургер-меню -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Центральная часть: Меню -->
-            <div class="nav-menu">
+            <div class="nav-menu" id="navMenu">
                 <a href="#hero">Главная</a>
                 <a href="#services">Услуги</a>
                 <a href="#pricing">Цены</a>
@@ -838,7 +1332,6 @@ footer {
                 <span class="cart-count" id="cartCount">0</span>
             </div>
 
-            <!-- Правая часть: соцсети - СКРЫТЫ -->
             <div class="nav-social">
                 <!-- Здесь ничего нет -->
             </div>
@@ -921,38 +1414,31 @@ footer {
     </div>
 </section>
 
-<!-- Блок "Почему выбирают нас" -->
-<section class="about">
+<!-- ===== БЛОК "ПОЧЕМУ ВЫБИРАЮТ НАС" (ИСПРАВЛЕННЫЙ) ===== -->
+<section class="about" id="about">
     <div class="container">
         <h2>Почему выбирают нас</h2>
-        <br>
         <p>
             Мы создаем современные сайты с акцентом
             на скорость загрузки, удобство использования
             и высокую конверсию посетителей в клиентов.
         </p>
-    </div>
-</section>
-
-<!-- Преимущества -->
-<section class="features">
-    <div class="container">
-        <div class="grid">
-            <div class="card">
+        <div class="about-grid">
+            <div class="about-card">
                 <h3>🚀 Быстрый запуск</h3>
                 <p>Запускаем проекты за считанные дни.</p>
             </div>
-            <div class="card">
+            <div class="about-card">
                 <h3>🌐 Хостинг в подарок</h3>
-                <p>Вы покупаете домен, а хостинг вам в подарок.</p>
+                <p>Вы покупаете домен, а хостинг в подарок.</p>
             </div>
-            <div class="card">
+            <div class="about-card">
                 <h3>📱 Адаптивный дизайн</h3>
                 <p>Отлично работает на всех устройствах.</p>
             </div>
-            <div class="card">
+            <div class="about-card">
                 <h3>📈 Высокая конверсия</h3>
-                <p>Фокус на продажах и заявках.</p>
+                <p>Делаем фокус на продажах и заявках.</p>
             </div>
         </div>
     </div>
@@ -1046,7 +1532,7 @@ footer {
     </div>
 </section>
 
-<!-- ===== КОНТАКТЫ (НОВЫЕ ИКОНКИ) ===== -->
+<!-- ===== КОНТАКТЫ ===== -->
 <section class="contacts" id="contacts">
     <div class="container">
         <h2>Наши контакты</h2>
@@ -1054,7 +1540,7 @@ footer {
             <!-- Telegram -->
             <a href="https://t.me/borisovsergey71" target="_blank" class="contact-item">
                 <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
                         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                     </svg>
                 </span>
@@ -1064,17 +1550,17 @@ footer {
             <!-- WhatsApp -->
             <a href="https://wa.me/79582319212" target="_blank" class="contact-item">
                 <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                 </span>
                 <span class="label">WhatsApp</span>
             </a>
 
-            <!-- Email (синяя иконка) -->
+            <!-- Email -->
             <a href="mailto:wisebor@gmail.com" class="contact-item email">
                 <span class="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#3b82f6" stroke="none">
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
                     </svg>
@@ -1085,237 +1571,186 @@ footer {
     </div>
 </section>
 
-<!-- ===== МОДАЛЬНЫЕ ОКНА ===== -->
-
-<!-- ======================================================== -->
-<!-- 1. ЛЕНДИНГ -->
-<!-- ======================================================== -->
+<!-- ================================================================ -->
+<!-- МОДАЛЬНЫЕ ОКНА -->
+<!-- ================================================================ -->
 <div class="modal" id="landingModal">
     <div class="modal-content">
         <span class="modal-close" id="closeLandingModal">&times;</span>
         <h2>🎯 Выберите услугу для лендинга</h2>
-        <!-- 10 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Лендинг до 2 товаров</strong><div style="color: #94a3b8;">10 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Лендинг до 2 товаров</strong><div style="color: #94a3b8; font-size: 14px;">10 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 13, name: 'Лендинг до 2 товаров', price: 10000 })">Купить</button>
         </div>
-        <!-- 5 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Еще 2 товара</strong><div style="color: #94a3b8;">5 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Еще 2 товара</strong><div style="color: #94a3b8; font-size: 14px;">5 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 14, name: 'Еще 2 товара', price: 5000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 15, name: 'Страница Договор оферты (лендинг)', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 16, name: 'Страница Политика Конфиденциальности (лендинг)', price: 3000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('landingModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('landingModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- 2. ИНТЕРНЕТ-МАГАЗИН                                     -->
-<!-- ======================================================== -->
 <div class="modal" id="shopModal">
     <div class="modal-content">
         <span class="modal-close" id="closeShopModal">&times;</span>
         <h2>🛒 Выберите услугу для интернет-магазина</h2>
-        <!-- 30 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Интернет-магазин на 6 товаров</strong><div style="color: #94a3b8;">30 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Интернет-магазин на 6 товаров</strong><div style="color: #94a3b8; font-size: 14px;">30 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 1, name: 'Интернет-магазин (6 товаров)', price: 30000 })">Купить</button>
         </div>
-        <!-- 5 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Еще 6 товаров</strong><div style="color: #94a3b8;">5 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Еще 6 товаров</strong><div style="color: #94a3b8; font-size: 14px;">5 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 2, name: 'Дополнительные 6 товаров', price: 5000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('shopModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('shopModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- 3. ПОРТФОЛИО                                            -->
-<!-- ======================================================== -->
 <div class="modal" id="portfolioModal">
     <div class="modal-content">
         <span class="modal-close" id="closePortfolioModal">&times;</span>
         <h2>🖼️ Выберите услугу для портфолио</h2>
-        <!-- 25 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Сайт Портфолио</strong><div style="color: #94a3b8;">25 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Сайт Портфолио</strong><div style="color: #94a3b8; font-size: 14px;">25 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 3, name: 'Сайт Портфолио', price: 25000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 4, name: 'Страница Договор оферты', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 5, name: 'Страница Политика Конфиденциальности', price: 3000 })">Купить</button>
         </div>
-        <!-- 2 000 (Форма обратной связи) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8; font-size: 14px;">2 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 8, name: 'Форма обратной связи', price: 2000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('portfolioModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('portfolioModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- 4. ВИЗИТТКА                                             -->
-<!-- ======================================================== -->
 <div class="modal" id="vizitkaModal">
     <div class="modal-content">
         <span class="modal-close" id="closeVizitkaModal">&times;</span>
         <h2>🏢 Выберите услугу для визитки</h2>
-        <!-- 20 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Сайт Визитка</strong><div style="color: #94a3b8;">20 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Сайт Визитка</strong><div style="color: #94a3b8; font-size: 14px;">20 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 6, name: 'Сайт Визитка', price: 20000 })">Купить</button>
         </div>
-        <!-- 3 000 (подключение приема платежей) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Подключение приема платежей</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Подключение приема платежей</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 20, name: 'Подключение приема платежей', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Политика конфиденциальности</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Политика конфиденциальности</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 7, name: 'Страница Политика конфиденциальности', price: 3000 })">Купить</button>
         </div>
-        <!-- 2 000 (форма обратной связи) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8; font-size: 14px;">2 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 8, name: 'Форма обратной связи', price: 2000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('vizitkaModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('vizitkaModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- 5. ИНФОРМАЦИОННЫЙ                                       -->
-<!-- ======================================================== -->
 <div class="modal" id="infoModal">
     <div class="modal-content">
         <span class="modal-close" id="closeInfoModal">&times;</span>
         <h2>📰 Выберите услугу для информационного сайта</h2>
-        <!-- 15 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Информационный сайт</strong><div style="color: #94a3b8;">15 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Информационный сайт</strong><div style="color: #94a3b8; font-size: 14px;">15 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 9, name: 'Информационный сайт', price: 15000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Договор оферты</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 10, name: 'Страница Договор оферты (инфо)', price: 3000 })">Купить</button>
         </div>
-        <!-- 3 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Страница Политика Конфиденциальности</strong><div style: "color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Страница Политика Конфиденциальности</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 11, name: 'Страница Политика Конфиденциальности (инфо)', price: 3000 })">Купить</button>
         </div>
-        <!-- 2 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Форма обратной связи</strong><div style="color: #94a3b8; font-size: 14px;">2 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 12, name: 'Форма обратной связи (инфо)', price: 2000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('infoModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('infoModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- 6. УНИВЕРСАЛЬНЫЙ (С ИКОНКОЙ)                            -->
-<!-- ======================================================== -->
 <div class="modal" id="universalModal">
     <div class="modal-content">
         <span class="modal-close" id="closeUniversalModal">&times;</span>
         <h2>🌟 Выберите услугу для универсального сайта</h2>
-        <!-- 60 000 -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Универсальный сайт</strong><div style="color: #94a3b8;">60 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Универсальный сайт</strong><div style="color: #94a3b8; font-size: 14px;">60 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 22, name: 'Универсальный сайт', price: 60000 })">Купить</button>
         </div>
-        <!-- 3 000 (отзывы) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8;">3 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Добавление блока Отзывы</strong><div style="color: #94a3b8; font-size: 14px;">3 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 18, name: 'Добавление блока Отзывы', price: 3000 })">Купить</button>
         </div>
-        <!-- 2 000 (карта проезда) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Карта проезда</strong><div style="color: #94a3b8;">2 000 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Карта проезда</strong><div style="color: #94a3b8; font-size: 14px;">2 000 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 21, name: 'Карта проезда', price: 2000 })">Купить</button>
         </div>
-        <!-- 0 (подарок) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #334155;">
-            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 12px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8;">0 ₽</div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #334155;">
+            <div><strong>Установка иконки favicon</strong> <span style="color: #3b82f6; font-size: 11px; background: #0f172a; padding: 2px 8px; border-radius: 12px;">🎁 в подарок</span><div style="color: #94a3b8; font-size: 14px;">0 ₽</div></div>
             <button class="btn-add" onclick="addToCart({ id: 99, name: 'Установка иконки favicon (подарок)', price: 0 })">Купить</button>
         </div>
-        <div style="margin-top: 20px; text-align: center;"><button class="btn" onclick="document.getElementById('universalModal').style.display='none'">Закрыть</button></div>
+        <div style="margin-top: 18px; text-align: center;"><button style="background: #334155; color: #fff; padding: 10px 30px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px;" onclick="document.getElementById('universalModal').style.display='none'">Закрыть</button></div>
     </div>
 </div>
 
-<!-- ======================================================== -->
-<!-- КОРЗИНА (ОБНОВЛЁННАЯ ССЫЛКА FORMSPREE)                  -->
-<!-- ======================================================== -->
+<!-- ===== КОРЗИНА ===== -->
 <div class="modal" id="cartModal">
     <div class="modal-content">
         <span class="modal-close" id="closeModal">&times;</span>
@@ -1427,7 +1862,19 @@ document.querySelectorAll('.nav-menu a').forEach(anchor => {
                 behavior: 'smooth'
             });
         }
+        if (window.innerWidth <= 768) {
+            document.getElementById('menuToggle').classList.remove('active');
+            document.getElementById('navMenu').classList.remove('open');
+        }
     });
+});
+
+// ============================================================
+//  ГАМБУРГЕР-МЕНЮ
+// ============================================================
+document.getElementById('menuToggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.getElementById('navMenu').classList.toggle('open');
 });
 
 // ============================================================
