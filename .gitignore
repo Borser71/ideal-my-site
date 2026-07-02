@@ -1,0 +1,30 @@
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Редакторы и IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.temp
+
+# Архивы и большие файлы
+*.zip
+*.rar
+*.7z
+*.tar.gz
+*.psd
+*.ai
+*.sketch
+*.mp4
+*.mov
+*.avi
+
+# Папки с исходниками (если есть)
+src/
+assets/
+node_modules/
